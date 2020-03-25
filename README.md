@@ -75,7 +75,7 @@ cmsRun step4_harvest/cfg.py maxEvents=10 nThreads=4 inputFiles=file:tracking.roo
 
 ## References
 
-* [](https://twiki.cern.ch/twiki/bin/viewauth/CMS/HighLevelTriggerPhase2)
-* [](https://github.com/hevjinyarar/CMS_HLT_Phase2_Tracking)
-* [](https://twiki.cern.ch/twiki/bin/viewauth/CMS/FastTimerService)
-* [](https://twiki.cern.ch/twiki/bin/viewauth/CMS/TriggerStudiesTiming)
+* <https://twiki.cern.ch/twiki/bin/viewauth/CMS/HighLevelTriggerPhase2>
+* <https://github.com/hevjinyarar/CMS_HLT_Phase2_Tracking>
+* <https://twiki.cern.ch/twiki/bin/viewauth/CMS/FastTimerService>
+* <https://twiki.cern.ch/twiki/bin/viewauth/CMS/TriggerStudiesTiming>
