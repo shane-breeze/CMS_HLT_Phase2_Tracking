@@ -50,8 +50,9 @@ cmsRun step2_raw/cfg.py maxEvents=10 nThreads=4 inputFiles=file:gen.root outputF
 
 This step involves the unpacking of the RAW event format followed by a custom
 set of modules defined in `step3_tracking/modules/` to perform the tracking,
-validation and DQM. By default the reconstruction output is not written. This
-step is executed with
+validation and DQM. There are three versions of the tracking algorithm to choose
+from. By default the reconstruction output is not written. This step is executed
+with
 
 ```
 cmsRun step3_raw/cfg.py maxEvents=10 nThreads=4 inputFiles=file:raw.root outputFile=file:tracking.root
