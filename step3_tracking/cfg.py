@@ -28,7 +28,7 @@ from Configuration.Eras.Era_Phase2C9_cff import Phase2C9
 process = cms.Process('RECO',Phase2C9)
 
 # import of standard configurations
-process.load('modules.extras_cff')
+process.load('step3_tracking.modules.extras_cff')
 process.load('Configuration.StandardSequences.Services_cff')
 process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
 process.load('FWCore.MessageService.MessageLogger_cfi')
@@ -95,10 +95,10 @@ from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, '110X_mcRun4_realistic_v3', '')
 
 # Path and EndPath definitions
-process.load('modules.raw2digi_cff')
-process.load('modules.MC_Tracking_v2_cff')
-process.load('modules.MC_prevalidation_v2_cff')
-process.load('modules.MC_Dqmoffline_v2_cff')
+process.load('step3_tracking.modules.raw2digi_cff')
+process.load('step3_tracking.modules.MC_Tracking_v2_cff')
+process.load('step3_tracking.modules.MC_prevalidation_v2_cff')
+process.load('step3_tracking.modules.MC_Dqmoffline_v2_cff')
 process.DQMoutput_step = cms.EndPath(process.DQMoutput)
 
 # load the DQMStore and DQMRootOutputModule

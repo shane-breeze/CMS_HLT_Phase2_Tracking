@@ -1,4 +1,5 @@
 #!/bin/bash
+export PYTHONPATH=$PYTHONPATH:$PWD
 export SCRAM_ARCH=slc7_amd64_gcc820
 export CMSSW_BASE=CMSSW_11_1_0_pre3
 source /cvmfs/cms.cern.ch/cmsset_default.sh
