@@ -18,9 +18,9 @@ sh setup.sh
 The general configuration for each step includes:
 
 * conditions: `110X_mcRun4_realistic_v3`
-* era: `Phase2C9`
+* beamspot: `HLLHC14TeV`
 * geometry: `Extended2026D49`
-
+* era: `Phase2C9`
 
 ## `gen`
 
@@ -58,7 +58,7 @@ with
 cmsRun step3_raw/cfg.py maxEvents=10 nThreads=4 inputFiles=file:raw.root outputFile=file:tracking.root
 ```
 
-Some pre-exisiting `GEN-SIM-RAW-DIGI` files may be used in place of steps 1 and
+Some pre-exisiting `GEN-SIM-DIGI-RAW` files may be used in place of steps 1 and
 2. These can be found with
 
 ```
