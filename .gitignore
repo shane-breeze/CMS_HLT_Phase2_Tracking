@@ -1,3 +1,7 @@
+# Repo specific
+CMSSW_*/
+*.root
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
