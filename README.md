@@ -4,10 +4,12 @@ A collection of [CMSSW](https://github.com/cms-sw/cmssw) configuration files
 and modules to generate and run the HLT phase II tracking algorithm. Currently
 setup to generate 14 TeV tt MC with (optionally) 200 average pileup vertices.
 The configuration files are split into 4 steps: `gen`, `raw`, `tracking` and
-`harvest`. Each step is detailed below. To setup the relevent CMSSW environment
-run
+`harvest`. Each step is detailed below. To setup this repository with the
+relevent CMSSW environment run
 
 ```
+git clone https://github.com/shane-breeze/CMS_HLT_Phase2_Tracking
+cd CMS_HLT_Phase2_Tracking
 sh setup.sh
 ```
 
