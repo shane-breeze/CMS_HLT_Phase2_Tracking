@@ -66,6 +66,8 @@ dasgoclient --query "dataset=/*14TeV*/Phase2HLT*/GEN-SIM-DIGI-RAW"
 dasgoclient --query "file dataset=/TT_TuneCP5_14TeV-powheg-pythia8/Phase2HLTTDRWinter20DIGI-PU200_110X_mcRun4_realistic_v3-v2/GEN-SIM-DIGI-RAW" # replace with the desired dataset
 ```
 
+and use the resulting files as the `inputFiles` option for the above `cmsRun` command.
+
 ## `harvest`
 
 The harvesting stage collects information on the tracking steps, such as timing
