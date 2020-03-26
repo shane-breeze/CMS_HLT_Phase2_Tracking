@@ -99,6 +99,7 @@ process.load('step3_tracking.modules.raw2digi_cff')
 process.load('step3_tracking.modules.MC_Tracking_v2_cff')
 process.load('step3_tracking.modules.MC_prevalidation_v2_cff')
 process.load('step3_tracking.modules.MC_Dqmoffline_v2_cff')
+process.RECOSIMoutput_step = cms.EndPath(process.RECOSIMoutput)
 process.DQMoutput_step = cms.EndPath(process.DQMoutput)
 
 # load the DQMStore and DQMRootOutputModule
@@ -130,6 +131,7 @@ process.schedule = cms.Schedule([
     process.MC_prevalidation_v2,
     process.MC_validation_v2,
     process.MC_Dqmoffline_v2,
+    #process.RECOSIMoutput_step,
     process.DQMoutput_step,
 ])
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask

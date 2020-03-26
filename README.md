@@ -43,7 +43,7 @@ distribution centered on a desired number (default is 200). The pileup mixing
 may be turned off. This step is executed with
 
 ```
-cmsRun step2_raw/cfg.py maxEvents=10 nThreads=4 inputFiles=file:gen.root outputFile=file:raw.root mixnpu=200
+cmsRun step2_raw/cfg.py maxEvents=10 nThreads=4 inputFiles=file:gen_numEvent10.root outputFile=file:raw.root mixnpu=200
 ```
 
 ## `tracking`
@@ -55,7 +55,7 @@ from. By default the reconstruction output is not written. This step is executed
 with
 
 ```
-cmsRun step3_raw/cfg.py maxEvents=10 nThreads=4 inputFiles=file:raw.root outputFile=file:tracking.root
+cmsRun step3_tracking/cfg.py maxEvents=10 nThreads=4 inputFiles=file:raw_numEvent10.root outputFile=file:tracking.root
 ```
 
 Some pre-exisiting `GEN-SIM-DIGI-RAW` files may be used in place of steps 1 and

@@ -25,7 +25,7 @@ options.register(
 )
 
 options.register(
-    'mixinput', '/MinBias_TuneCP5_14TeV-pythia8/Phase2HLTTDRWinter20GS-110X_mcRun4_realistic_v3-v1/GEN-SIM',
+    'mixinput', 'dbs:/MinBias_TuneCP5_14TeV-pythia8/Phase2HLTTDRWinter20GS-110X_mcRun4_realistic_v3-v1/GEN-SIM',
     VarParsing.multiplicity.singleton,
     VarParsing.varType.string,
     "Output file (EDMLHE format)",
@@ -35,7 +35,7 @@ options.register(
     'mixnpu', 200.000,
     VarParsing.multiplicity.singleton,
     VarParsing.varType.float,
-    "Average numbe of pileup vertices",
+    "Average number of pileup vertices",
 )
 
 options.parseArguments()
@@ -146,7 +146,14 @@ process.FEVTDEBUGHLToutput = cms.OutputModule("PoolOutputModule",
 def run_command(cmd):
     p = sp.Popen(shlex.split(cmd), stdout=sp.PIPE, stderr=sp.PIPE)
     return p.communicate()
-out, err = run_command("dasgoclient --query 'file dataset={}'".format(options.mixinput))
+ftype, fname = options.mixinput.split(":")
+if ftype.lower() in ["file"]:
+    mixinput = [options.mixinput]
+elif ftype.lower() in ["dbs"]:
+    out, err = run_command("dasgoclient --query 'file dataset={}'".format(fname))
+    mixinput = out.splitlines()
+else:
+    raise ValueError
 
 # Other statements
 if not options.nopileup:
@@ -154,7 +161,7 @@ if not options.nopileup:
     process.mix.bunchspace = cms.int32(25)
     process.mix.minBunch = cms.int32(-3)
     process.mix.maxBunch = cms.int32(3)
-    process.mix.input.fileNames = cms.untracked.vstring(out.splitlines())
+    process.mix.input.fileNames = cms.untracked.vstring(mixinput)
 process.mix.digitizers = cms.PSet(process.theDigitizersValid)
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, '110X_mcRun4_realistic_v3', '')
